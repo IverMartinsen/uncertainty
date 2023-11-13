@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
 
     adaptive_hmc_kernel = tfp.mcmc.SimpleStepSizeAdaptation(
-        tfp.mcmc.NoUTurnSampler(target_log_prob_fn=unnormalized_posterior),
+        tfp.mcmc.NoUTurnSampler(target_log_prob_fn=unnormalized_posterior, step_size=0.01),
         num_adaptation_steps=int(num_burnin_steps * 0.8),
         target_accept_prob=target_accept_prob,
     )
